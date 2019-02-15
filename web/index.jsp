@@ -23,7 +23,7 @@
                     <p><img class="icone" src="imagens/filtro.png"> <b>Arquivo</b></p>
                     <table class="tbFiltro">
                         <tr>
-                            <td><a href="#"><img class="icone" src="imagens/calendario.png"> Novo</a></td>
+                            <td><a href="#"><img class="icone" src="imagens/novo.png"> Novo</a></td>
                             <td><a href="#" onclick="abrir(1)"><img class="icone" src="imagens/hora.png"> Abrir</a></td>
                         </tr>
                         <tr>
@@ -33,7 +33,7 @@
                     <p><img class="icone" src="imagens/filtro.png"> <b>Dados</b></p>
                     <table class="tbFiltro">
                         <tr>
-                            <td class="abreSubmenu"><a href="#"><img class="icone" src="imagens/calendario.png">Adicionar</a>
+                            <td class="abreSubmenu"><a href="#">Adicionar</a>
                                 <div class="submenu">
                                     <table>
                                         <tr>
@@ -92,14 +92,16 @@
                         <td colspan="2">Ação</td>
                     </tr>
                     <c:forEach items="${estacoes}" var="estacao">
+                        <c:forEach items="${momentos}" var="momento">
                         <tr class="tbDados">
-                            <td><c:out value="${estacao.nome}" /></td>
-                            <td>teste</td>
-                            <td>teste</td>
-                            <td><c:out value="${estacao.nome}" /></td>
-                            <td class="acao1"><img class="icone" src="imagens/adicionar.png"></td>
+                            <td><c:out value="${momento.data}" /></td>
+                            <td><c:out value="${momento.hora}" /></td>
+                            <td>30.5</td>
+                            <td>4.2</td>
+                            <td class="acao1"><img class="icone" src="imagens/editar.png"></td>
                             <td class="acao2"><img class="icone" src="imagens/excluir.png"></td>
                         </tr>
+                        </c:forEach>
                     </c:forEach>
 
                 </table>
